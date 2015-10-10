@@ -72,7 +72,7 @@ nav img {
 
     display: none;
 }
-li:hover .profItem{
+nav li:hover .profItem{
     display: block;
 }
 .profItem a{
