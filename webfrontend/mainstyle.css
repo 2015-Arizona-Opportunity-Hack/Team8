@@ -1,0 +1,93 @@
+
+#header h1 {
+    font-weight: 500;
+    font-family: 'aleolightitalic';
+    display: inline-block;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#header {
+    max-width: 900px;
+    margin: auto;
+    
+}
+
+nav {
+    display: inline;
+    float: right;
+    font-size: 1.2em;
+    font-family: aleolight;
+    margin-top: 1.6em;
+
+}
+
+nav ul {
+    display: inline;
+}
+
+.navItem {
+    list-style: none;
+    display: inline-block;
+    margin: 0px;
+    float: left;
+}
+.navItem a:hover{
+    background: #dddddd;
+    color: #444444;
+}
+.navItem a{
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+
+}
+
+.stickytop {
+    width: 100%;
+    
+    position: fixed; 
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #eeeeee;
+}
+
+nav img {
+    margin: 0px;
+    margin-top: -20px;
+    display: inline;
+    position: relative;
+    top: 8px;
+    left: -5px;
+    width: 30px;
+}
+
+.profItem {
+    text-decoration: none;
+    list-style: none;
+    margin: 0px;
+
+    display: none;
+}
+li:hover .profItem{
+    display: block;
+}
+.profItem a{
+/*    padding: 0px;*/
+    margin: 0px;
+    display: block;
+}
+.navItem ul{
+    display: block;
+    background: rgb(23, 119, 190);;
+    padding: 0px;
+    margin-top: .55em;
+
+}
+
+#headcontainer {
+    background: rgb(23, 119, 190);
+}
