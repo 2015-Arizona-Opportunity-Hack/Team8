@@ -45,14 +45,15 @@ nav ul {
 
 .stickytop {
     width: 100%;
-    
+    z-index: 10;
     position: fixed; 
 }
 
 body {
     margin: 0px;
     padding: 0px;
-    background: #eeeeee;
+    
+    font-family: aleo;
 }
 
 nav img {
@@ -90,4 +91,46 @@ nav li:hover .profItem{
 
 #headcontainer {
     background: rgb(23, 119, 190);
+}
+
+.contentSection {
+    padding: .5em;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: #eeeeee;
+    color: #444;
+    margin: .5em;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dedede;
+}
+
+.contentInnerWhite {
+    width: 100%;
+    background: #fafafa;
+    min-height: 100px;
+    padding-bottom: .5em;
+}
+
+.contentSection h2 {
+    margin-left: 2em;
+}
+
+.friendCard {
+    margin-left: .5em;
+    margin-top: .5em;
+    border: solid;
+    max-width: 200px;
+    text-align: center;
+        float: left;
+}
+
+.friendCardInner {
+    padding: 1em;
+
+}
+
+.clearFix {
+    clear: both;
 }
