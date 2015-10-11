@@ -52,7 +52,7 @@ nav ul {
 body {
     margin: 0px;
     padding: 0px;
-    
+    background: #eeeeee;
     font-family: aleo;
 }
 
@@ -94,43 +94,61 @@ nav li:hover .profItem{
 }
 
 .contentSection {
-    padding: .5em;
+    padding: 0em;
     padding-left: 0px;
     padding-right: 0px;
-    background: #eeeeee;
+    background: #f4f7f8;
     color: #444;
-    margin: .5em;
+    margin: 1em;
     border: 1px solid #dedede;
     border-radius: 3px;
+    overflow: hidden;
 }
 
 .contentInnerWhite {
     width: 100%;
-    background: #fafafa;
+    background: #ffffff;
     min-height: 100px;
     padding-bottom: .5em;
+
+    border-top: 1px solid #dedede;
 }
 
 .contentSection h2 {
-    margin-left: 2em;
+
+    margin:.5em;
 }
 
-.friendCard {
-    margin-left: .5em;
+.contentCard {
+    margin-left: 7px;
     margin-top: .5em;
     border: 1px solid #dedede;
     border-radius: 3px;
-    max-width: 200px;
+    width: 163px;
     text-align: center;
     float: left;
-    background: #eeeeee;
+    background: #f4f7f8;
 }
 
-.friendCardInner {
-    padding: 1em;
-
+.contentCardInner {
+    overflow: hidden;
 }
 
 .clearFix {
     clear: both;
+}
+
+.contentCardImage {
+    width: 100%;
+    height: 6em;
+    
+    /*For testing only*/
+    background: url('images/coverpic.jpg');
+    background-size: cover;
+    background-position: center top;
+    
+}
+
+.contentCard h3 {
+    margin: .4em;
 }
