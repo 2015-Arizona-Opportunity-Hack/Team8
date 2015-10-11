@@ -110,12 +110,12 @@ nav li:hover .profItem{
     background: #ffffff;
     min-height: 100px;
     padding-bottom: .5em;
-
     border-top: 1px solid #dedede;
 }
 
-.contentSection h2 {
 
+.contentSection h2 {
+    display: inline-block;
     margin:.5em;
 }
 
@@ -124,7 +124,7 @@ nav li:hover .profItem{
     margin-top: .5em;
     border: 1px solid #dedede;
     border-radius: 3px;
-    width: 163px;
+    width: 278px;
     text-align: center;
     float: left;
     background: #f4f7f8;
@@ -151,4 +151,26 @@ nav li:hover .profItem{
 
 .contentCard h3 {
     margin: .4em;
+}
+
+.sectionExpand {
+    float: right;
+    margin: 1em;
+}
+a{
+    color: rgb(23, 119, 190);
+    text-decoration: none;
+}
+a:hover{
+    
+    text-decoration: underline;
+}
+
+.family h3 {
+    display: inline-block;
+    margin-right: 0px;
+}
+
+.family p {
+    display: inline-block
 }
