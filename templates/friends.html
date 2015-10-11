@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CCN Connect</title>
+    <link rel="stylesheet" href="../static/framework.css" type="text/css">
+    <link rel="stylesheet" href="../static/fonts/aleo.css" type="text/css">
+    <link rel="stylesheet" href="../static/friends.css" type="text/css">
+</head>
+
+<body>
+
+<div class="stickytop">
+        <div id="headcontainer">
+            <div id="header">
+                <h1><a href="index.html" style="text-decoration: none; color:white">CCN Connect</a></h1>
+                <nav>
+                    <ul>
+                        <li class="navItem"><a href="index.html">Inbox</a></li>
+                        <li class="navItem"><a href="friends.html">Friends</a></li>
+                        <li class="navItem"><a href="meetPeople.html">Meet people</a></li>
+                        <li class="navItem"><a href="events.html">Events</a></li>
+                        <li class="navItem"><a href="community.html">Communities</a></li>
+                        <li class="navItem">
+                            <a href="#"><img src="../static/profpic.png">Nelson</a>
+                            <ul>
+                                <li class="profItem"><a href="profile.html">Profile</a></li>
+                                <li class="profItem"><a href="#">Settings</a></li>
+                                <li class="profItem"><a href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>.
+    <!--Include at least everything above this line-->
+    <div id="friendListContainer">
+
+        <div class="contentSection" id="friendsAllFriends">
+            <h2>Your closest friends</h2>
+            <span class="sectionExpand" href="#">The 6 people you talk to the most. <a href="#">switch to family view</a></span>
+            <!-- all these sectionExpands should display conditionall if any of the sections have more than 6 entries-->
+            {{ 'friends length:' + str(len(friends)) }}
+            {% for friend in friends %}
+            <div class="contentInnerWhite">
+                <div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src={{ "../static/" + friend[2] + ".png" }}>
+                        </div>
+                        <h3><a href="#">{{ friend[0] + friend[1] }}</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div>
+            
+
+
+                <div class="clearFix"></div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="contentSection" id="friendsAllFriends">
+            <h2>All of your friends</h2>
+            <span class="sectionExpand" href="#">All 900 of your friends are currently displayed. <a href="#">find more</a></span>
+            <!-- all these sectionExpands should display conditionall if any of the sections have more than 6 entries-->
+            <div class="contentInnerWhite">
+                <div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="../static/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div>
+                <div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div>
+                <div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div>
+                <div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div><div class="contentCard personCard">
+                    <div class="contentCardInner">
+                        <div class="contentCardImage">
+                            <img class="personCardProfile" src="images/profPicLarge.png">
+
+                        </div>
+                        <h3><a href="#">John Snow</a></h3>
+                        <a class="messageButton" href="#"></a>
+                    </div>
+                </div>
+
+                <div class="clearFix"></div>
+            </div>
+
+        </div>
+        
+        
+    </div>
+</body>
+
+</html>
