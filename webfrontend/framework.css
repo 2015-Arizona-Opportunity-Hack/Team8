@@ -64,6 +64,8 @@ nav img {
     top: 8px;
     left: -5px;
     width: 30px;
+    border: 2px solid #DEDEDE;
+    border-radius: 18px;
 }
 
 .profItem {
@@ -128,8 +130,11 @@ nav li:hover .profItem{
     text-align: center;
     float: left;
     background: #f4f7f8;
+    
 }
-
+.contentCard:hover{
+    box-shadow: 1px 1px 1px #dedede;
+}
 .contentCardInner {
     overflow: hidden;
 }
@@ -141,7 +146,7 @@ nav li:hover .profItem{
 .contentCardImage {
     width: 100%;
     height: 6em;
-    
+    overflow: hidden;
     /*For testing only*/
     background: url('images/coverpic.jpg');
     background-size: cover;
@@ -162,7 +167,6 @@ a{
     text-decoration: none;
 }
 a:hover{
-    
     text-decoration: underline;
 }
 
@@ -173,4 +177,13 @@ a:hover{
 
 .family p {
     display: inline-block
+}
+
+.personCardProfile {
+    width: 70px;
+    position: relative;
+    top: 10px;
+    border-radius: 49px;
+    border: 3px solid #f4f7f8;
+    box-shadow: 0px 0px 90px #444;
 }
