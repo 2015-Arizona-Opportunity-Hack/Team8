@@ -1,0 +1,10 @@
+.inboxContain {
+    max-width: 901px;
+    margin: auto;
+    z-index: 2;
+}
+#NewMsg
+{
+    float:right;
+    min-height:30px;
+}
