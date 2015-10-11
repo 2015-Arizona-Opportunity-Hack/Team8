@@ -146,7 +146,11 @@ nav li:hover .profItem{
     background: url('images/coverpic.jpg');
     background-size: cover;
     background-position: center top;
-    
+    overflow: hidden;
+}
+
+.contentCard:hover{
+    box-shadow: 1px 1px 1px #dedede;
 }
 
 .contentCard h3 {
@@ -173,4 +177,14 @@ a:hover{
 
 .family p {
     display: inline-block
+}
+
+
+
+.personCardProfile {
+    width: 70px;
+    border-radius: 35px;
+    top: 15px;
+    position: relative;
+    box-shadow: 0px 0px 100px #000;
 }
