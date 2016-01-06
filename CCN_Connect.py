@@ -170,7 +170,7 @@ def show_user_prof(username):
                          'where person2_id = ?', str(entries[0][1]))
         entries2 = cur.fetchall()
         entries = entries1 + entries2
-        return render_template('profile.html', friends=entries)
+        return render_template('profile.html', friends=entries, fname=firstname, lname=lastname)
 
 
 @app.route('/add', methods=['POST'])
