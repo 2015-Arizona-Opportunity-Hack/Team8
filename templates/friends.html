@@ -42,7 +42,7 @@
             <h2>Your closest friends</h2>
             <span class="sectionExpand" href="#">The 6 people you talk to the most. <a href="#">switch to family view</a></span>
             <!-- all these sectionExpands should display conditionall if any of the sections have more than 6 entries-->
-            {{ 'friends length:' + str(len(friends)) }}
+            {{ 'friends length: ' + friends|length|string }}
             {% for friend in friends %}
             <div class="contentInnerWhite">
                 <div class="contentCard personCard">
