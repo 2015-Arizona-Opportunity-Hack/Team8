@@ -25,7 +25,7 @@ app.config.update(dict(
     USERNAME='admin',
     PASSWORD='default'
 ))
-# app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+#app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 
 def connect_db():
@@ -41,10 +41,11 @@ def init_db():
     with app.open_resource('schema.sql', mode='r') as f:
         db.cursor().executescript(f.read())
     db.commit()
-
+    
 
 @app.cli.command('initdb')
 def initdb_command():
+    print "hi"
     """Creates the database tables."""
     init_db()
     print('Initialized the database.')
@@ -57,6 +58,7 @@ def get_db():
     if not hasattr(g, 'sqlite_db'):
         g.sqlite_db = connect_db()
     return g.sqlite_db
+
 
 
 @app.teardown_appcontext
@@ -201,7 +203,5 @@ def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
     return redirect(url_for('show_welcome'))
-
-
 
 app.run()
