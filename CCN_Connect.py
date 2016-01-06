@@ -114,7 +114,7 @@ def show_user_friends(username):
     firstname = name_list[0]
     lastname = name_list[1]
     db = get_db()
-    cur = db.execute('select description, id from people ' +
+    cur = db.execute('select description, id, first_name, last_name from people ' +
                      'where first_name = ' + "'" + firstname + "'" +
                      'and last_name = ' + "'" + lastname + "'")
     entries = cur.fetchall()
@@ -122,15 +122,28 @@ def show_user_friends(username):
         return "Invalid Page"
     else:
         db = get_db()
-        cur = db.execute('select person2_id from friendships ' +
-                         'where person1_id = ?', str(entries[0][1]))
+        cur = db.execute('select person2_id from friendships where person1_id = ?', str(entries[0][1]))
         entries1 = cur.fetchall()
 
         cur = db.execute('select person1_id from friendships ' +
                          'where person2_id = ?', str(entries[0][1]))
         entries2 = cur.fetchall()
-        entries = entries1 + entries2
-        return render_template('friends.html', friends=entries)
+        
+        friends = []
+        for entry in entries1:
+            num = len(friends)
+            db = get_db()
+            cur = db.execute('select description, first_name, last_name from people where id = ?', str(entry[0]))
+            friends.append(cur.fetchall())
+            print friends[num]
+
+        for entry in entries2:
+            num = len(friends)
+            db = get_db()
+            cur = db.execute('select description, first_name, last_name from people where id = ?', str(entry[0]))
+            efriends.append(cur.fetchall())
+            print entry
+        return render_template('friends.html', friends=friends)
     
 @app.route('/<username>/profile')  # formatted as firstname.lastname
 def show_user_prof(username):
@@ -144,6 +157,7 @@ def show_user_prof(username):
                      'where first_name = ' + "'" + firstname + "'" +
                      'and last_name = ' + "'" + lastname + "'")
     entries = cur.fetchall()
+
     if len(entries) == 0:
         return "Invalid Page"
     else:
