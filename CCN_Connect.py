@@ -92,7 +92,9 @@ def make_suggestions_weighted(person_id):
                      'where community_member_id= ?', person_id)
     # finish this
 
-
+@app.route('/')
+def show_welcome():
+    return render_template('index.html')
 @app.route('/<username>/friends')  # formatted as firstname.lastname
 def show_user_friends(username):
     name_list = username.split('.')
