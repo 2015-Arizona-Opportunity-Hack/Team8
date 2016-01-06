@@ -118,6 +118,32 @@ def show_user_friends(username):
         entries2 = cur.fetchall()
         entries = entries1 + entries2
         return render_template('friends.html', friends=entries)
+    
+@app.route('/<username>/profile')  # formatted as firstname.lastname
+def show_user_prof(username):
+    name_list = username.split('.')
+    if len(name_list) == 1:
+        return "Invalid Page"
+    firstname = name_list[0]
+    lastname = name_list[1]
+    db = get_db()
+    cur = db.execute('select description, id from people ' +
+                     'where first_name = ' + "'" + firstname + "'" +
+                     'and last_name = ' + "'" + lastname + "'")
+    entries = cur.fetchall()
+    if len(entries) == 0:
+        return "Invalid Page"
+    else:
+        db = get_db()
+        cur = db.execute('select person2_id from friendships ' +
+                         'where person1_id = ?', str(entries[0][1]))
+        entries1 = cur.fetchall()
+
+        cur = db.execute('select person1_id from friendships ' +
+                         'where person2_id = ?', str(entries[0][1]))
+        entries2 = cur.fetchall()
+        entries = entries1 + entries2
+        return render_template('profile.html', friends=entries)
 
 
 @app.route('/add', methods=['POST'])
