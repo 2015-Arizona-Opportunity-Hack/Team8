@@ -1,0 +1,30 @@
+{% extends "skeleton.html" %} {% block content %}
+<div class="dialogContain">
+    <div class="dialog">
+        <div class="loginForm contentSection">
+            
+            <form action="{{ url_for('login') }}" method=post>
+                <fieldset>
+                    <legend>
+                        <h2>Login</h2></legend>
+                    <div class="contentInnerWhite">
+                       {% if error %}
+            <p class=error><strong>Error:</strong> </p>{{ error }} {% endif %}
+                        <p>
+                            <label class=field for=username>Username: </label>
+                            <input type=text value="nelson.smith" name=username onfocus="if(this.value=='nelson.smith'){this.value='';}"/>
+                        </p>
+                        <p>
+                            <label class=field for=password>Password: </label>
+                            <input type=password value=password name=password onfocus="if(this.value=='password'){this.value='';}"/>
+                        </p>
+                        <input type=submit value=Login>
+                    </div>
+                </fieldset>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

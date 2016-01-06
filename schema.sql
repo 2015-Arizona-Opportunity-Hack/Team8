@@ -7,10 +7,12 @@ CREATE TABLE people (
     state TEXT,
     diagnosis_type REFERENCES diagnoses,
     description TEXT,
-    years_of_no_treatment INTEGER
+    years_of_no_treatment INTEGER,
+    email TEXT,
+    pwd TEXT
 );
-insert into people (first_name, last_name, description) values ('Nelson', 'Smith', 'Enjoys a good root beer');
-insert into people (first_name, last_name, description) values ('Andrew', 'Polican', 'Wonders about computers');
+insert into people (first_name, last_name, description, email, pwd) values ('Nelson', 'Smith', 'Enjoys a good root beer', 'nsmith@chuckdries.com', 'password');
+insert into people (first_name, last_name, description, email, pwd) values ('Andrew', 'Polican', 'Wonders about computers', 'apolican@chuckdries.com', 'password');
 
 CREATE TABLE friendships (
     person1_id REFERENCES people(id),

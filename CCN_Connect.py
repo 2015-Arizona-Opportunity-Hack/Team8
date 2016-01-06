@@ -8,6 +8,11 @@ from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 
+import flask.ext.login as flask_login
+
+login_manager = flask_login.LoginManager()
+
+
 
 # create our little application :)
 app = Flask(__name__)
@@ -94,7 +99,11 @@ def make_suggestions_weighted(person_id):
 
 @app.route('/')
 def show_welcome():
+#    if current_user.is_authenticated():
+#        print "hi"
     return render_template('index.html')
+    
+        
 @app.route('/<username>/friends')  # formatted as firstname.lastname
 def show_user_friends(username):
     name_list = username.split('.')
@@ -183,7 +192,7 @@ def login():
         else:
             session['logged_in'] = True
             flash('You were logged in')
-            return redirect(url_for('show_entries'))
+            return redirect(url_for('show_welcome'))
     return render_template('login.html', error=error)
 
 
@@ -191,6 +200,8 @@ def login():
 def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
-    return redirect(url_for('show_entries'))
+    return redirect(url_for('show_welcome'))
+
+
 
 app.run()

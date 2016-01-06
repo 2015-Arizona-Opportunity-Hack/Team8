@@ -1,59 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>CCN Connect</title>
-    <link rel="stylesheet" href="../static/framework.css" type="text/css">
-    <link rel="stylesheet" href="../static/fonts/aleo.css" type="text/css">
-    <link rel="stylesheet" href="../static/index.css" type="text/css">
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-</head>
-
-<body>
-     <div class="stickytop">
-        <div id="headcontainer">
-            <div id="header">
-                <h1><a href="index.html" style="text-decoration: none; color:white">CCN Connect</a></h1>
-                <nav>
-                    <ul>
-                        <li class="navItem"><a href="#">Inbox</a></li>
-                        <li class="navItem"><a href="#">Friends</a></li>
-                        <li class="navItem"><a href="#">Meet people</a></li>
-                        <li class="navItem"><a href="#">Events</a></li>
-                        <li class="navItem"><a href="#">Communities</a></li>
-                        <li class="navItem">
-                            <a href="#"><img src="../static/profpic.png">Nelson</a>
-                            <ul>
-                                <li class="profItem"><a href="#">Profile</a></li>
-                                <li class="profItem"><a href="#">Settings</a></li>
-                                <li class="profItem"><a href="#">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>.
-    <!--Include at least everything above this line-->
+{% extends "skeleton.html" %} {% block content %}
     <div id="indexHero">.
        <div id="heroContent">
            <span class="heart_large"></span>&nbsp;<h1><span id="red">Connect and find support.</span></h1>
            <h2>CCN Connect is a social network by the Childhood Cancer Network</h2>
            <h2>for cancer patients, survivors, and their families.</h2>
        </div>
-        <a class="actionButton" href="#">Login</a>
+       {% if not session.logged_in %}
+        <a class="actionButton" href="{{ url_for('login') }}">Login</a>
         <a class="actionButton" id="signUp" href="#">Sign Up</a>
+        {% endif %}
     </div>
     <div id="indexContain">
 
     </div>
-    <div class="footer">
-        <div id="housekeeping">
-            <div>Icons made by <a href="http://www.flaticon.com/authors/yannick" title="Yannick">Yannick</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
-            <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
-        </div>
-    </div>
-</body>
-
-</html>
+    {% endblock %}
