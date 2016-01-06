@@ -10,23 +10,25 @@
             <span class="sectionExpand" href="#">The 6 people you talk to the most. <a href="#">switch to family view</a></span>
             <!-- all these sectionExpands should display conditionall if any of the sections have more than 6 entries-->
             {{ 'friends length: ' + friends|length|string }}
-            {% for friend in friends %}
+            
             <div class="contentInnerWhite">
+               {% for friend in friends %}
                 <div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src={{ "../static/" + friend[2] + ".png" }}>
+                            <img class="personCardProfile" src={{ "../static/images/profpic.png" }}>
                         </div>
-                        <h3><a href="#">{{ friend[0] + friend[1] }}</a></h3>
+                        <h3><a href="#">{{ friend[0][1] + " " + friend[0][2] }}</a></h3>
                         <a class="messageButton" href="#"></a>
                     </div>
                 </div>
+                {% endfor %}
             
 
 
                 <div class="clearFix"></div>
             </div>
-            {% endfor %}
+            
 
         </div>
         <div class="contentSection" id="friendsAllFriends">
@@ -47,7 +49,7 @@
                 <div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -57,7 +59,7 @@
                 <div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -67,7 +69,7 @@
                 <div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -76,7 +78,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -85,7 +87,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -94,7 +96,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -103,7 +105,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -112,7 +114,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -121,7 +123,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -130,7 +132,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -139,7 +141,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -148,7 +150,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -157,7 +159,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
@@ -166,7 +168,7 @@
                 </div><div class="contentCard personCard">
                     <div class="contentCardInner">
                         <div class="contentCardImage">
-                            <img class="personCardProfile" src="images/profPicLarge.png">
+                            <img class="personCardProfile" src="../static/images/profPicLarge.png">
 
                         </div>
                         <h3><a href="#">John Snow</a></h3>
