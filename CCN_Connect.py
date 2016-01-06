@@ -5,7 +5,7 @@
 
 import os
 from sqlite3 import dbapi2 as sqlite3
-from flask import Flask, request, session, g, redirect, url_for, abort, \
+from flask import Flask, request, Markup, session, g, redirect, url_for, abort, \
      render_template, flash
 
 import flask.ext.login as flask_login
@@ -109,6 +109,7 @@ def show_welcome():
 @app.route('/<username>/friends')  # formatted as firstname.lastname
 def show_user_friends(username):
     name_list = username.split('.')
+    
     if len(name_list) == 1:
         return "Invalid Page"
     firstname = name_list[0]
@@ -119,7 +120,8 @@ def show_user_friends(username):
                      'and last_name = ' + "'" + lastname + "'")
     entries = cur.fetchall()
     if len(entries) == 0:
-        return "Invalid Page"
+        flash('User not found!')
+        return render_template('index.html')
     else:
         db = get_db()
         cur = db.execute('select person2_id from friendships where person1_id = ?', str(entries[0][1]))
@@ -147,20 +149,23 @@ def show_user_friends(username):
     
 @app.route('/<username>/profile')  # formatted as firstname.lastname
 def show_user_prof(username):
-    name_list = username.split('.')
+    name_list = username.lower().split('.')
+    print "a: " + username.lower()
     if len(name_list) == 1:
         return "Invalid Page"
     firstname = name_list[0]
     lastname = name_list[1]
     db = get_db()
-    cur = db.execute('select description, id from people ' +
-                     'where first_name = ' + "'" + firstname + "'" +
-                     'and last_name = ' + "'" + lastname + "'")
+    cur = db.execute('select description, id, first_name, last_name from people ' +
+                     'where LOWER(first_name) = ' + "'" + firstname + "'" +
+                     'and LOWER(last_name) = ' + "'" + lastname + "'")
     entries = cur.fetchall()
-
     if len(entries) == 0:
-        return "Invalid Page"
+        flash('User not found!')
+        return render_template('index.html')
     else:
+        firstname = entries[0][2]
+        lastname = entries[0][3]
         db = get_db()
         cur = db.execute('select person2_id from friendships ' +
                          'where person1_id = ?', str(entries[0][1]))
@@ -203,19 +208,23 @@ def login():
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME']:
             error = 'Invalid username'
+            flash(error)
         elif request.form['password'] != app.config['PASSWORD']:
             error = 'Invalid password'
+            flash(error)
         else:
             session['logged_in'] = True
-            flash('You were logged in')
+            flash('You successfully logged in')
             return redirect(url_for('show_welcome'))
     return render_template('login.html', error=error)
+#    flash(Markup("{{% include \"login.html\" %}}"))
+#    return render_template('index.html', error=error)
 
 
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash('You were logged out')
+    flash('You have been logged out')
     return redirect(url_for('show_welcome'))
 
 app.run()

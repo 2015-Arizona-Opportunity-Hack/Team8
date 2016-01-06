@@ -170,6 +170,15 @@ a {
     text-decoration: none;
 }
 
+.flash {
+    background: #CEE5F5;
+    padding: 0.5em;
+    border: 1px solid #AACBE2;
+    max-width: 500px;
+    margin: auto;
+
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -261,25 +270,29 @@ a:hover {
     color: #444444;
     margin-right: 12px;
 }
-.loginForm [type="submit"]{
+
+.loginForm [type="submit"] {
     color: rgb(23, 119, 190);
     border: none;
     background: none;
     font-family: aleo;
     font-size: 18px;
 }
-.loginForm [type="submit"]:hover{
+
+.loginForm [type="submit"]:hover {
     text-decoration: underline;
 }
+
 .loginForm form {
     margin: auto;
-
 }
-.loginForm fieldset{
+
+.loginForm fieldset {
     margin: 0;
     padding: 0;
     border: none;
 }
+
 .dialogContain {
     margin: 0;
     padding: 0;
@@ -295,7 +308,13 @@ a:hover {
 }
 
 .dialog .contentInnerWhite {
-
     text-align: center;
     display: inline-block;
+}
+.flashContain {
+    position: fixed;
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+    
 }
