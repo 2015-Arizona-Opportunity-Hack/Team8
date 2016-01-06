@@ -8,3 +8,21 @@
     float:right;
     min-height:30px;
 }
+.messageOtherInner {
+    background: #eee;
+}
+
+.messageSelf {
+    float: right;
+    margin-right: 8px;
+}
+
+.messageCard {
+    width: auto;
+    min-width: 100px;
+}
+
+.messageCard p {
+    margin: 10px;
+}
+
