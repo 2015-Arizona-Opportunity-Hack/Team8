@@ -108,16 +108,15 @@ def show_welcome():
         
 @app.route('/<username>/friends')  # formatted as firstname.lastname
 def show_user_friends(username):
-    name_list = username.split('.')
-    
+    name_list = username.lower().split('.')
     if len(name_list) == 1:
         return "Invalid Page"
     firstname = name_list[0]
     lastname = name_list[1]
     db = get_db()
     cur = db.execute('select description, id, first_name, last_name from people ' +
-                     'where first_name = ' + "'" + firstname + "'" +
-                     'and last_name = ' + "'" + lastname + "'")
+                     'where LOWER(first_name) = ' + "'" + firstname + "'" +
+                     'and LOWER(last_name) = ' + "'" + lastname + "'")
     entries = cur.fetchall()
     if len(entries) == 0:
         flash('User not found!')
@@ -143,7 +142,7 @@ def show_user_friends(username):
             num = len(friends)
             db = get_db()
             cur = db.execute('select description, first_name, last_name from people where id = ?', str(entry[0]))
-            efriends.append(cur.fetchall())
+            friends.append(cur.fetchall())
             print entry
         return render_template('friends.html', friends=friends)
     
